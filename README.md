@@ -15,9 +15,7 @@ NioEventLoop의 private int select(long deadlineNanos)에서 Java NIO의 Selecto
 
 ### 오해했던 부분
 > 이벤트를 받고 처리하는 곳을 설명하는 대부분의 블로그들에서 이벤트 큐를 써놨다.
-> 근데 이벤트 큐는 Flux나 Mono에서 사용하는 것이고, 클라이언트에서 요청을 받아 핸들러어뎁터한테 도달하는데 까지는 이벤트 큐를 전혀 사용하지 않는다.
-> 이벤트 큐는 Flux나 Mono에서 사용하는 것으로, 대부분의 블로그 설명과는 다소 차이가 있다.
+> NioEventLoop(workerGroup에 속해 있는)가 요청을 처리할 때, 큐에서 꺼내는데 대부분의 블로그들에서 이 큐를 이벤트 큐라고 설명했던 것 같다. 그리고 이벤트 기반 프로그래밍을 도와준다고 설명해있는데,,
+> 내가 이해하기론, 이벤트 기반 프로그래밍을 도와주긴 하지만, 이는 inactive 등등의 특정 상황에 따른 이벤트 기반 프로그래밍을 지원해주기는 하나, reactor-netty까지는 넘어와야 좀 더 적합한 말이지 않을까 싶다..! 아직 reactor-netty까지는 보지 못해서 좀 더 공부해봐야 알 것 같다.
 
-
-SingleThreadEventExecutor
 
